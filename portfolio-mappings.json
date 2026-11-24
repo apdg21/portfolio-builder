@@ -1,0 +1,338 @@
+{
+  "style1": {
+    "scalar": {
+      "fullName": "logo",
+      "headline": "hero.title",
+      "tagline": "hero.subtitle",
+      "ctaText": { "path": "hero.buttonText", "keepWhenBlank": true },
+      "aboutTitle": "about.title",
+      "aboutText": "about.description",
+      "profileImage": { "path": "about.profileImage", "keepWhenBlank": true },
+      "contactTitle": { "path": "contact.title", "keepWhenBlank": true },
+      "email": "contact.formEmail",
+      "copyright": "footer.copyright"
+    },
+    "compose": {
+      "about.title": { "template": "About {fullName}", "onlyIfBlank": "aboutTitle" }
+    },
+    "arrays": {
+      "projects": {
+        "targetPath": "samples",
+        "itemMap": { "title": "title", "description": "description", "image": "image", "link": "link" }
+      },
+      "testimonials": {
+        "targetPath": "testimonials",
+        "itemMap": { "text": "text", "author": "author" }
+      }
+    },
+    "objectMap": {
+      "socialLinks": { "targetPath": "social", "keyFrom": "platform", "valueFrom": "url", "normalizeKey": "lowerSlug" }
+    }
+  },
+
+  "style2": {
+    "scalar": {
+      "fullName": "basicInfo.logo",
+      "headline": "hero.title",
+      "tagline": "hero.subtitle",
+      "ctaText": { "path": "hero.buttonText", "keepWhenBlank": true },
+      "profileImage": { "path": "hero.image", "keepWhenBlank": true },
+      "aboutImage": { "path": "about.image", "keepWhenBlank": true, "fallbackFrom": "profileImage" },
+      "aboutTitle": "about.title",
+      "aboutText": "about.content",
+      "contactTitle": { "path": "contact.title", "keepWhenBlank": true },
+      "email": "contact.recipientEmail",
+      "contactIntro": { "path": "contact.description", "keepWhenBlank": true },
+      "successMessage": { "path": "contact.successMessage", "keepWhenBlank": true },
+      "projectsTitle": { "path": "work.title", "keepWhenBlank": true },
+      "testimonialsTitle": { "path": "testimonials.title", "keepWhenBlank": true },
+      "copyright": "footer.copyright"
+    },
+    "compose": {
+      "basicInfo.title": { "template": "{fullName} Portfolio" },
+      "about.title": { "template": "About {fullName}", "onlyIfBlank": "aboutTitle" }
+    },
+    "arrays": {
+      "projects": {
+        "targetPath": "work.projects",
+        "itemMap": { "title": "title", "description": "description", "image": "image", "link": "file" },
+        "splitFields": { "tags": { "targetField": "tags" } }
+      },
+      "skills": {
+        "targetPath": "about.skills",
+        "scalarFromItem": "name"
+      },
+      "testimonials": {
+        "targetPath": "testimonials.items",
+        "itemMap": {
+          "text": "text",
+          "author": "authorName",
+          "authorPosition": "authorPosition",
+          "authorImage": "authorImage"
+        }
+      },
+      "socialLinks": {
+        "targetPath": "footer.socialLinks",
+        "itemMap": { "url": "url" },
+        "lowercaseFields": { "platform": "icon" }
+      }
+    }
+  },
+
+  "style3": {
+    "scalar": {
+      "fullName": "logo",
+      "headline": "hero.title",
+      "tagline": "hero.subtitle",
+      "aboutText": "about.text",
+      "email": "contact.email",
+      "successMessage": { "path": "contact.successMessage", "keepWhenBlank": true },
+      "copyright": "footer.text"
+    },
+    "arrays": {
+      "projects": {
+        "targetPath": "projects",
+        "itemMap": { "title": "title", "description": "description", "image": "image", "link": "link" }
+      },
+      "skills": {
+        "targetPath": "about.skills",
+        "scalarFromItem": "name"
+      },
+      "testimonials": {
+        "targetPath": "testimonials",
+        "itemMap": { "text": "text", "author": "author" }
+      }
+    },
+    "objectMap": {
+      "socialLinks": { "targetPath": "social", "keyFrom": "platform", "valueFrom": "url", "normalizeKey": "lowerSlug" }
+    }
+  },
+
+  "style4": {
+    "scalar": {
+      "fullName": "logo",
+      "aboutText": "about",
+      "email": "contactEmail",
+      "copyright": "footer"
+    },
+    "compose": {
+      "hero": { "template": "{headline} {tagline}" }
+    },
+    "arrays": {
+      "projects": {
+        "targetPath": "samples",
+        "itemMap": { "title": "title", "description": "description", "image": "image", "link": "link" }
+      },
+      "testimonials": {
+        "targetPath": "testimonials",
+        "itemMap": { "text": "quote", "author": "author" }
+      }
+    },
+    "objectMap": {
+      "socialLinks": { "targetPath": "social", "keyFrom": "platform", "valueFrom": "url", "normalizeKey": "lowerSlug" }
+    }
+  },
+
+  "style5": {
+    "scalar": {
+      "fullName": "logo",
+      "headline": "hero.title",
+      "tagline": "hero.subtitle",
+      "aboutText": "about.text",
+      "profileImage": { "path": "about.profileImage", "keepWhenBlank": true },
+      "email": "contact.email",
+      "successMessage": { "path": "contact.successMessage", "keepWhenBlank": true },
+      "copyright": "footer.text"
+    },
+    "arrays": {
+      "projects": {
+        "targetPath": "projects",
+        "itemMap": { "title": "title", "description": "description", "image": "image", "link": "link" }
+      },
+      "skills": {
+        "targetPath": "about.skills",
+        "scalarFromItem": "name"
+      },
+      "testimonials": {
+        "targetPath": "testimonials",
+        "itemMap": { "text": "text", "author": "author" }
+      }
+    },
+    "objectMap": {
+      "socialLinks": { "targetPath": "social", "keyFrom": "platform", "valueFrom": "url", "normalizeKey": "lowerSlug" }
+    }
+  },
+
+  "style6": {
+    "scalar": {
+      "fullName": "siteName",
+      "headline": "hero.title",
+      "tagline": "hero.subtitle",
+      "heroImage": { "path": "hero.backgroundImage", "keepWhenBlank": true },
+      "aboutText": { "path": "about.bio", "html": true },
+      "profileImage": { "path": "about.profileImage", "keepWhenBlank": true },
+      "email": "contact.email",
+      "copyright": "copyrightText"
+    },
+    "arrays": {
+      "projects": {
+        "targetPath": "projects",
+        "itemMap": { "title": "title", "description": "description", "image": "image", "link": "highResUrl" },
+        "fallbackFields": { "highResUrl": "image" },
+        "splitFields": { "tags": { "targetField": "categories" } }
+      },
+      "skills": {
+        "targetPath": "about.skills",
+        "scalarFromItem": "name"
+      },
+      "testimonials": {
+        "targetPath": "testimonials",
+        "itemMap": { "text": "text", "author": "author" }
+      },
+      "socialLinks": {
+        "targetPath": "socialLinks",
+        "itemMap": { "platform": "platform", "url": "url" }
+      }
+    }
+  },
+
+  "style7": {
+    "scalar": {
+      "fullName": "logo",
+      "headline": "hero.title",
+      "tagline": "hero.subtitle",
+      "aboutText": "about.text",
+      "email": "contact.email",
+      "successMessage": { "path": "contact.successMessage", "keepWhenBlank": true },
+      "copyright": "footer.text"
+    },
+    "arrays": {
+      "projects": {
+        "targetPath": "projects",
+        "itemMap": { "title": "title", "description": "description", "image": "image", "link": "link" }
+      },
+      "skills": {
+        "targetPath": "about.skills",
+        "scalarFromItem": "name"
+      },
+      "testimonials": {
+        "targetPath": "testimonials",
+        "itemMap": { "text": "text", "author": "author" }
+      }
+    },
+    "objectMap": {
+      "socialLinks": { "targetPath": "social", "keyFrom": "platform", "valueFrom": "url", "normalizeKey": "lowerSlug" }
+    }
+  },
+
+  "style8": {
+    "scalar": {
+      "fullName": "siteName",
+      "headline": "hero.title",
+      "tagline": "hero.subtitle",
+      "heroImage": { "path": "hero.backgroundImage", "keepWhenBlank": true },
+      "aboutText": { "path": "about.bio", "html": true },
+      "profileImage": { "path": "about.profileImage", "keepWhenBlank": true },
+      "email": "contact.email",
+      "copyright": "copyrightText"
+    },
+    "arrays": {
+      "projects": {
+        "targetPath": "projects",
+        "itemMap": { "title": "title", "description": "description", "image": "image", "link": "highResUrl" },
+        "fallbackFields": { "highResUrl": "image" },
+        "splitFields": { "tags": { "targetField": "categories" } }
+      },
+      "skills": {
+        "targetPath": "about.skills",
+        "scalarFromItem": "name"
+      },
+      "testimonials": {
+        "targetPath": "testimonials",
+        "itemMap": { "text": "text", "author": "author" }
+      },
+      "socialLinks": {
+        "targetPath": "socialLinks",
+        "itemMap": { "platform": "platform", "url": "url" }
+      }
+    }
+  },
+
+  "style9": {
+    "scalar": {
+      "fullName": "siteDetails.logo",
+      "headline": "siteDetails.heroText",
+      "heroImage": { "path": "siteDetails.backgroundValue", "keepWhenBlank": true },
+      "aboutText": "about.text",
+      "profileImage": { "path": "about.profileImage", "keepWhenBlank": true },
+      "email": "contact.email",
+      "copyright": "siteDetails.footer"
+    },
+    "arrays": {
+      "projects": {
+        "targetPath": "projects",
+        "itemMap": { "title": "title", "description": "description", "image": "image", "link": "linkToCopy" }
+      },
+      "skills": {
+        "targetPath": "about.skills",
+        "scalarFromItem": "name"
+      },
+      "testimonials": {
+        "targetPath": "testimonials",
+        "itemMap": { "text": "text", "author": "author" }
+      }
+    },
+    "objectMap": {
+      "socialLinks": { "targetPath": "socialLinks", "keyFrom": "platform", "valueFrom": "url", "normalizeKey": "lowerSlug" }
+    }
+  },
+
+  "style10": {
+    "scalar": {
+      "fullName": "basicInfo.logo",
+      "headline": "hero.title",
+      "tagline": "hero.subtitle",
+      "ctaText": { "path": "hero.buttonText", "keepWhenBlank": true },
+      "profileImage": { "path": "hero.image", "keepWhenBlank": true },
+      "aboutImage": { "path": "about.image", "keepWhenBlank": true, "fallbackFrom": "profileImage" },
+      "aboutTitle": "about.title",
+      "aboutText": "about.content",
+      "contactTitle": { "path": "contact.title", "keepWhenBlank": true },
+      "email": "contact.recipientEmail",
+      "contactIntro": { "path": "contact.description", "keepWhenBlank": true },
+      "successMessage": { "path": "contact.successMessage", "keepWhenBlank": true },
+      "projectsTitle": { "path": "work.title", "keepWhenBlank": true },
+      "testimonialsTitle": { "path": "testimonials.title", "keepWhenBlank": true },
+      "copyright": "footer.copyright"
+    },
+    "compose": {
+      "basicInfo.title": { "template": "{fullName} Portfolio" },
+      "about.title": { "template": "About {fullName}", "onlyIfBlank": "aboutTitle" }
+    },
+    "arrays": {
+      "projects": {
+        "targetPath": "work.projects",
+        "itemMap": { "title": "title", "description": "description", "image": "image", "link": "link" },
+        "splitFields": { "tags": { "targetField": "tags" } }
+      },
+      "skills": {
+        "targetPath": "about.skills",
+        "scalarFromItem": "name"
+      },
+      "testimonials": {
+        "targetPath": "testimonials.items",
+        "itemMap": {
+          "text": "text",
+          "author": "authorName",
+          "authorPosition": "authorPosition",
+          "authorImage": "authorImage"
+        }
+      },
+      "socialLinks": {
+        "targetPath": "footer.socialLinks",
+        "itemMap": { "url": "url" },
+        "lowercaseFields": { "platform": "icon" }
+      }
+    }
+  }
+}

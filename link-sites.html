@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W52LYHBGZY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W52LYHBGZY');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Link Your Resume, Portfolio and Profile — ResumePro</title>
+<meta name="description" content="Manually link your published ResumePro resume, portfolio and profile so each site shows a link to the others.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e0e12;
+    --ink-soft: #6b6b78;
+    --paper: #fafaf8;
+    --paper-warm: #f4f1eb;
+    --card: #ffffff;
+    --accent: #c8a96e;
+    --accent-dark: #9a7a3f;
+    --accent-tint: #f7f1e4;
+    --border: #e2e0d8;
+    --success: #2d7a4f;
+    --error: #b3432f;
+    --error-tint: #fbeae6;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  *, *::before, *::after { margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-body);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 22px 24px 0;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .brand-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    background: var(--ink);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .back-link { font-size: 13px; font-weight: 600; color: var(--accent-dark); text-decoration: none; }
+  .back-link:hover { text-decoration: underline; }
+  main { max-width: 820px; margin: 0 auto; padding: 26px 24px 64px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 1px 2px rgba(14,14,18,0.03), 0 8px 24px rgba(14,14,18,0.04);
+  }
+  h1 { font-family: var(--font-display); font-size: 26px; line-height: 1.25; letter-spacing: -0.01em; }
+  .lede { color: var(--ink-soft); font-size: 14px; margin: 10px 0 22px; }
+  .callout {
+    background: var(--accent-tint);
+    border: 1px solid rgba(154,122,63,0.22);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 13px;
+    color: #59472a;
+    margin-bottom: 24px;
+  }
+  .callout strong { color: var(--accent-dark); }
+  fieldset { border: none; margin: 0 0 22px; }
+  legend {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent-dark);
+    padding: 0 0 8px;
+  }
+  .field { margin-bottom: 14px; }
+  label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 5px; }
+  .hint { font-weight: 400; color: var(--ink-soft); }
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--paper);
+    color: var(--ink);
+    font: 13px/1.4 var(--font-body);
+  }
+  input:focus { outline: 2px solid var(--accent-dark); outline-offset: 1px; }
+  .actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 4px; }
+  button.primary {
+    background: var(--ink);
+    color: #fff;
+    border: none;
+    border-radius: 9px;
+    padding: 12px 22px;
+    font: 700 14px/1 var(--font-body);
+    cursor: pointer;
+  }
+  button.primary:hover { background: #000; }
+  button.primary:disabled { opacity: 0.6; cursor: progress; }
+  .status { font-size: 13px; }
+  .status.error { color: var(--error); font-weight: 600; }
+  .result {
+    margin-top: 22px;
+    padding: 18px;
+    border: 1px solid rgba(45,122,79,0.3);
+    background: #f2f8f4;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+  .result h2 { font-family: var(--font-display); font-size: 17px; color: var(--success); margin-bottom: 10px; }
+  .result ul { list-style: none; display: grid; gap: 8px; margin: 12px 0; }
+  .result a { color: #1d4ed8; font-weight: 600; word-break: break-all; }
+  .result p { font-size: 12.5px; color: var(--ink-soft); }
+  .note { margin-top: 18px; font-size: 12px; color: var(--ink-soft); }
+  @media (max-width: 560px) {
+    .card { padding: 20px; }
+    h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="brand" href="../index.html"><span class="brand-icon">RP</span><span>ResumePro</span></a>
+  <a class="back-link" href="../index.html">← Back to home</a>
+</div>
+
+<main>
+  <div class="card">
+    <h1>Link your resume, portfolio and profile</h1>
+    <p class="lede">
+      Linking puts the other sites on each site's menu — a <strong>Portfolio</strong>,
+      <strong>Profile</strong> or <strong>Resume</strong> link (or a floating button when the
+      design has no menu). Fill in at least two sites; every pair is linked both ways.
+    </p>
+
+    <div class="callout">
+      <strong>Normally this happens automatically</strong> when you publish both sites from the same
+      browser. Use this page if you published on another device, cleared your browser data, or the
+      link did not appear.
+    </div>
+
+    <form id="linkForm" novalidate>
+      <fieldset>
+        <legend>Your resume site</legend>
+        <div class="field">
+          <label for="resumeUrl">Resume address <span class="hint">— the link we gave you, or just the site name</span></label>
+          <input type="text" id="resumeUrl" name="resumeUrl" autocomplete="off" spellcheck="false" placeholder="https://rosemarie-santos.resumepro-builds.pages.dev">
+        </div>
+        <div class="field">
+          <label for="resumeKey">Resume license key <span class="hint">— the key you used to publish the resume</span></label>
+          <input type="text" id="resumeKey" name="resumeKey" autocomplete="off" spellcheck="false" placeholder="Paste your resume license key">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your portfolio site</legend>
+        <div class="field">
+          <label for="portfolioUrl">Portfolio address <span class="hint">— the link we gave you, or just the site name</span></label>
+          <input type="text" id="portfolioUrl" name="portfolioUrl" autocomplete="off" spellcheck="false" placeholder="https://rosemarie-santos-portfolio.resumepro-builds.pages.dev">
+        </div>
+        <div class="field">
+          <label for="portfolioKey">Portfolio license key <span class="hint">— the key you used to publish the portfolio</span></label>
+          <input type="text" id="portfolioKey" name="portfolioKey" autocomplete="off" spellcheck="false" placeholder="Paste your portfolio license key">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your profile site <span class="hint">— optional</span></legend>
+        <div class="field">
+          <label for="profileUrl">Profile address <span class="hint">— the /p/ link we gave you, or just the site name</span></label>
+          <input type="text" id="profileUrl" name="profileUrl" autocomplete="off" spellcheck="false" placeholder="https://resumepro.pages.dev/p/rosemarie-santos">
+        </div>
+        <div class="field">
+          <label for="profileKey">Profile license key <span class="hint">— the key you used to publish the profile</span></label>
+          <input type="text" id="profileKey" name="profileKey" autocomplete="off" spellcheck="false" placeholder="Paste your profile license key">
+        </div>
+      </fieldset>
+
+      <div class="actions">
+        <button class="primary" id="linkBtn" type="submit">Link my sites</button>
+        <div class="status" id="status" role="status" aria-live="polite"></div>
+      </div>
+    </form>
+
+    <div class="result" id="result" role="status" aria-live="polite" hidden></div>
+
+    <p class="note">
+      Enter at least two sites. Both must be ours (<code>*.resumepro-builds.pages.dev</code>,
+      or the <code>/p/</code> link for a profile) and carry the same name.
+      A middle initial added on only one site counts as a different name and will not link.
+      Your keys are sent only to our site to prove you own them; they are not stored on this page.
+    </p>
+  </div>
+</main>
+
+<script>
+(function () {
+  'use strict';
+
+  var form = document.getElementById('linkForm');
+  var button = document.getElementById('linkBtn');
+  var statusEl = document.getElementById('status');
+  var resultEl = document.getElementById('result');
+
+  function readJson(store, name) {
+    try { return JSON.parse(store.getItem(name) || 'null'); } catch (_) { return null; }
+  }
+
+  // Prefill whatever this browser still knows (same origin as all builders).
+  try {
+    var pairs = readJson(localStorage, 'rpSites') || {};
+    var resumeUrl = document.getElementById('resumeUrl');
+    var portfolioUrl = document.getElementById('portfolioUrl');
+    var profileUrl = document.getElementById('profileUrl');
+    if (pairs.resume && pairs.resume.id) resumeUrl.value = pairs.resume.id;
+    else {
+      var legacyResume = localStorage.getItem('publishedResumeId');
+      if (legacyResume) resumeUrl.value = legacyResume;
+    }
+    if (pairs.portfolio && pairs.portfolio.id) portfolioUrl.value = pairs.portfolio.id;
+    if (pairs.profile && pairs.profile.id) profileUrl.value = pairs.profile.id;
+
+    var resumeLicense = readJson(sessionStorage, 'rpLicense');
+    if (resumeLicense && resumeLicense.key) document.getElementById('resumeKey').value = resumeLicense.key;
+    var portfolioLicense = readJson(sessionStorage, 'rpPortfolioLicense');
+    if (portfolioLicense && portfolioLicense.key) document.getElementById('portfolioKey').value = portfolioLicense.key;
+    var profileLicense = readJson(sessionStorage, 'rpProfileLicense');
+    if (profileLicense && profileLicense.key) document.getElementById('profileKey').value = profileLicense.key;
+  } catch (_) {}
+
+  function setStatus(text, isError) {
+    statusEl.textContent = text || '';
+    statusEl.className = 'status' + (isError ? ' error' : '');
+  }
+
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    var entries = [
+      { type: 'resume', label: 'Resume', url: document.getElementById('resumeUrl').value.trim(), key: document.getElementById('resumeKey').value.trim() },
+      { type: 'portfolio', label: 'Portfolio', url: document.getElementById('portfolioUrl').value.trim(), key: document.getElementById('portfolioKey').value.trim() },
+      { type: 'profile', label: 'Profile', url: document.getElementById('profileUrl').value.trim(), key: document.getElementById('profileKey').value.trim() }
+    ];
+    var filled = entries.filter(function (entry) { return entry.url || entry.key; });
+
+    if (filled.length < 2) {
+      setStatus('Enter at least two sites.', true);
+      return;
+    }
+    if (filled.some(function (entry) { return !entry.url; })) {
+      setStatus('Enter an address for each site you filled in.', true);
+      return;
+    }
+    if (filled.some(function (entry) { return !entry.key; })) {
+      setStatus('Enter a license key for each site you filled in.', true);
+      return;
+    }
+
+    var payload = {};
+    filled.forEach(function (entry) {
+      payload[entry.type] = entry.url;
+      payload[entry.type + 'Key'] = entry.key;
+    });
+
+    button.disabled = true;
+    button.textContent = 'Linking…';
+    resultEl.hidden = true;
+    setStatus('');
+
+    try {
+      var res = await fetch('/api/pair', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      var data = await res.json().catch(function () { return {}; });
+
+      if (!res.ok) {
+        var message = data.error || 'Could not link the sites.';
+        setStatus(message, true);
+        return;
+      }
+
+      // Keep every builder on the same page: later publishes from this
+      // browser will preserve/refresh the pairing automatically.
+      var saved = readJson(localStorage, 'rpSites') || {};
+      var rows = '';
+      filled.forEach(function (entry) {
+        var site = data[entry.type];
+        if (!site) return;
+        saved[entry.type] = { id: site.id, token: data.tokens[entry.type] };
+        rows += '<li>' + entry.label + ': <a href="' + site.url + '" target="_blank" rel="noopener">' + site.url + '</a></li>';
+      });
+      try { localStorage.setItem('rpSites', JSON.stringify(saved)); } catch (_) {}
+
+      resultEl.innerHTML =
+        '<h2>Your sites are linked.</h2>' +
+        '<ul>' + rows + '</ul>' +
+        '<p>Reload each site to see the new links. If a site was published before this feature existed, publish it once more from its builder so the page includes the link script.</p>';
+      resultEl.hidden = false;
+      setStatus('Linked.', false);
+    } catch (err) {
+      setStatus('Could not reach the server. Check your connection and try again.', true);
+    } finally {
+      button.disabled = false;
+      button.textContent = 'Link my sites';
+    }
+  });
+})();
+</script>
+</body>
+</html>

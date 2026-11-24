@@ -1,0 +1,76 @@
+[
+  { "path": "fullName", "label": "Your name / brand", "type": "text", "section": "Basics", "required": true },
+  { "path": "headline", "label": "Main headline", "type": "text", "section": "Basics", "required": true },
+  { "path": "tagline", "label": "Sub-headline / tagline", "type": "text", "section": "Basics" },
+  { "path": "ctaText", "label": "Hero button text", "type": "text", "section": "Basics", "showWhenMapped": true },
+  { "path": "profileImage", "label": "Profile photo", "type": "image", "section": "Basics" },
+  { "path": "aboutImage", "label": "Second photo — About / sidebar (leave empty to reuse your profile photo)", "type": "image", "section": "Basics", "showWhenMapped": true },
+  {
+    "path": "heroImage", "label": "Hero background image (leave empty to keep the design’s)", "type": "image", "section": "Basics",
+    "showWhenMapped": true
+  },
+  { "path": "aboutTitle", "label": "About heading (leave empty to keep the design’s)", "type": "text", "section": "Basics", "showWhenMapped": true },
+  { "path": "aboutText", "label": "About you", "type": "textarea", "section": "Basics" },
+
+  { "path": "contactTitle", "label": "Contact heading (leave empty to keep the design’s)", "type": "text", "section": "Contact", "showWhenMapped": true },
+  { "path": "email", "label": "Contact email", "type": "text", "section": "Contact", "required": true },
+  { "path": "contactIntro", "label": "Contact intro (optional)", "type": "textarea", "section": "Contact", "showWhenMapped": true },
+  { "path": "successMessage", "label": "Message after the contact form is sent (optional)", "type": "text", "section": "Contact", "showWhenMapped": true },
+
+  {
+    "path": "skills", "label": "Skills", "type": "repeatable", "section": "Skills",
+    "itemFields": [
+      { "path": "name", "label": "Skill", "type": "text" }
+    ]
+  },
+
+  { "path": "projectsTitle", "label": "Main work heading (leave empty to keep the design’s)", "type": "text", "section": "Projects", "showWhenMapped": true },
+  {
+    "path": "projects", "label": "Projects", "type": "repeatable", "section": "Projects",
+    "itemFields": [
+      { "path": "title", "label": "Project title", "type": "text" },
+      { "path": "description", "label": "Description", "type": "textarea" },
+      { "path": "image", "label": "Project image", "type": "image" },
+      { "path": "link", "label": "Project link (optional)", "type": "text" },
+      { "path": "tags", "label": "Tags / categories (comma separated, optional)", "type": "text" }
+    ]
+  },
+  {
+    "path": "workSections", "label": "More work sections", "type": "repeatable", "section": "Projects", "optional": true,
+    "hint": "Show a second, third… work section for other kinds of work — e.g. “Email design”, “Copywriting samples”, “Brand work”. Each one gets its own heading on the site.",
+    "itemFields": [
+      { "path": "title", "label": "Section heading", "type": "text" },
+      { "path": "description", "label": "Short intro (optional)", "type": "textarea" },
+      {
+        "path": "projects", "label": "Projects in this section", "type": "repeatable",
+        "itemFields": [
+          { "path": "title", "label": "Project title", "type": "text" },
+          { "path": "description", "label": "Description", "type": "textarea" },
+          { "path": "image", "label": "Project image", "type": "image" },
+          { "path": "link", "label": "Project link (optional)", "type": "text" }
+        ]
+      }
+    ]
+  },
+
+  { "path": "testimonialsTitle", "label": "Testimonials heading (leave empty to keep the design’s)", "type": "text", "section": "Testimonials", "showWhenMapped": true },
+  {
+    "path": "testimonials", "label": "Testimonials", "type": "repeatable", "section": "Testimonials",
+    "itemFields": [
+      { "path": "text", "label": "Quote", "type": "textarea" },
+      { "path": "author", "label": "Author", "type": "text" },
+      { "path": "authorPosition", "label": "Author role / company (optional)", "type": "text" },
+      { "path": "authorImage", "label": "Author photo (optional)", "type": "image" }
+    ]
+  },
+
+  {
+    "path": "socialLinks", "label": "Social links", "type": "repeatable", "section": "Social",
+    "itemFields": [
+      { "path": "platform", "label": "Platform (e.g. LinkedIn)", "type": "text" },
+      { "path": "url", "label": "URL", "type": "text" }
+    ]
+  },
+
+  { "path": "copyright", "label": "Footer copyright line", "type": "text", "section": "Footer" }
+]

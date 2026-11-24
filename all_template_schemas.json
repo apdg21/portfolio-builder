@@ -1,0 +1,1428 @@
+{
+  "portfolio_templates": {
+    "style1": {
+      "logo": "Jane Doe Designs",
+      "hero": {
+        "title": "Bringing Your Vision to Life.",
+        "subtitle": "Creative Graphic Designer specializing in branding, web, and print.",
+        "buttonText": "View My Latest Work"
+      },
+      "about": {
+        "title": "About Me",
+        "description": "Hi, I'm Jane Doe, a passionate graphic designer with over 7 years of experience crafting compelling visual narratives. My expertise spans across brand identity, web design, print collateral, and digital illustrations. I love collaborating with clients to transform their ideas into stunning and effective designs that resonate with their audience. Let's create something amazing together!",
+        "profileImage": "assets/profile.jpg"
+      },
+      "samples": [
+        {
+          "title": "Eco-Friendly Brand Identity",
+          "description": "Complete branding package for a sustainable fashion startup, including logo, color palette, and typography guidelines.",
+          "image": "assets/samples/sample1.jpg",
+          "link": "#"
+        },
+        {
+          "title": "Tech Conference Website Redesign",
+          "description": "Responsive website UI/UX redesign for a major annual technology conference, focusing on user experience and visual appeal.",
+          "image": "assets/samples/sample2.jpg",
+          "link": "#"
+        },
+        {
+          "title": "Local Cafe Menu Design",
+          "description": "Creation of a vibrant and inviting menu design for a new independent coffee shop, reflecting its unique atmosphere.",
+          "image": "assets/samples/sample3.jpg",
+          "link": "#"
+        },
+        {
+          "title": "Mobile App UI for Fitness Tracker",
+          "description": "Designed intuitive and engaging user interface screens for a health and fitness tracking mobile application.",
+          "image": "assets/samples/sample4.jpg",
+          "link": "#"
+        },
+        {
+          "title": "Children's Book Illustrations",
+          "description": "Series of whimsical digital illustrations created for a new children's storybook aimed at young readers.",
+          "image": "assets/samples/sample5.jpg",
+          "link": "#"
+        },
+        {
+          "title": "Corporate Annual Report Layout",
+          "description": "Designed a clean and professional layout for a multinational corporation's annual financial report, enhancing readability.",
+          "image": "assets/samples/sample6.jpg",
+          "link": "#"
+        },
+        {
+          "title": "Product Packaging Design",
+          "description": "Innovative and eye-catching packaging design for a line of artisanal food products, ensuring shelf appeal.",
+          "image": "assets/samples/sample7.jpg",
+          "link": "#"
+        },
+        {
+          "title": "Event Poster Series",
+          "description": "A collection of bold and dynamic poster designs for a music festival, a local charity run, and a tech expo.",
+          "image": "assets/samples/sample8.jpg",
+          "link": "#"
+        },
+        {
+          "title": "Social Media Content Templates",
+          "description": "Developed a cohesive set of editable templates for a small business to maintain a consistent brand presence on social platforms.",
+          "image": "assets/samples/sample9.jpg",
+          "link": "#"
+        },
+        {
+          "title": "Infographic for Data Visualization",
+          "description": "Created an informative and visually appealing infographic to explain complex market trends for a business consultancy.",
+          "image": "assets/samples/sample10.jpg",
+          "link": "#"
+        }
+      ],
+      "testimonials": [
+        {
+          "text": "Jane's work on our new branding was exceptional! She truly captured our vision and brought it to life with her creativity.",
+          "author": "Sarah M., Startup Founder"
+        },
+        {
+          "text": "Professional, prompt, and incredibly talented. Jane redesigned our website, and the results exceeded our expectations.",
+          "author": "David L., Marketing Manager"
+        }
+      ],
+      "contact": {
+        "title": "Get In Touch",
+        "formEmail": "your-email@example.com"
+      },
+      "footer": {
+        "copyright": "© 2025 Jane Doe Designs. All rights reserved."
+      },
+      "social": {
+        "linkedin": "https://linkedin.com/in/janedoeportfolio",
+        "twitter": "https://twitter.com/janedoedesigns",
+        "github": "https://github.com/janedoegraphic"
+      }
+    },
+    "style2": {
+      "basicInfo": {
+        "title": "Juan dela Cruz Portfolio",
+        "logo": "Juan dela Cruz"
+      },
+      "navigation": [
+        {
+          "text": "Work",
+          "link": "#work"
+        },
+        {
+          "text": "About",
+          "link": "#about"
+        },
+        {
+          "text": "Testimonials",
+          "link": "#testimonials"
+        },
+        {
+          "text": "Contact",
+          "link": "#contact"
+        }
+      ],
+      "hero": {
+        "title": "Professional Email Designer & Developer",
+        "subtitle": "I create beautiful, responsive emails that drive engagement and conversions for your business.",
+        "buttonText": "View My Work",
+        "image": "profile.jpg"
+      },
+      "work": {
+        "title": "My Email Design Projects",
+        "projects": [
+          {
+            "title": "E-commerce Newsletter",
+            "description": "Monthly newsletter for fashion retailer with dynamic product blocks and promo codes.",
+            "image": "project1.jpg",
+            "file": "newsletter1.pdf",
+            "tags": [
+              "HTML",
+              "CSS",
+              "Responsive"
+            ]
+          },
+          {
+            "title": "Product Launch Campaign",
+            "description": "Interactive email announcing new tech product with animated CTA buttons.",
+            "image": "project2.jpg",
+            "link": "https://example.com/launch-campaign",
+            "tags": [
+              "AMP",
+              "Animation",
+              "Mobile-first"
+            ]
+          },
+          {
+            "title": "Corporate Newsletter",
+            "description": "Quarterly update for financial services firm with data visualization.",
+            "image": "project3.jpg",
+            "file": "corporate-newsletter.pdf",
+            "tags": [
+              "Branded",
+              "Accessibility",
+              "Dark Mode"
+            ]
+          },
+          {
+            "title": "Welcome Series",
+            "description": "5-part onboarding sequence with personalized content blocks.",
+            "image": "project4.jpg",
+            "file": "welcome-series.pdf",
+            "tags": [
+              "Automation",
+              "Dynamic Content",
+              "A/B Testing"
+            ]
+          },
+          {
+            "title": "Black Friday Sale",
+            "description": "High-conversion promotional email with countdown timer.",
+            "image": "project5.jpg",
+            "link": "https://example.com/black-friday",
+            "tags": [
+              "Promotional",
+              "Urgency",
+              "Responsive"
+            ]
+          },
+          {
+            "title": "Event Invitation",
+            "description": "Virtual conference invite with calendar integration and speaker profiles.",
+            "image": "project6.jpg",
+            "file": "event-invite.pdf",
+            "tags": [
+              "iCal",
+              "Interactive",
+              "Registration"
+            ]
+          },
+          {
+            "title": "Transactional Receipt",
+            "description": "Post-purchase email with order details and recommendation engine.",
+            "image": "project7.jpg",
+            "link": "https://example.com/transactional-email",
+            "tags": [
+              "Dynamic Data",
+              "Personalization",
+              "Upsell"
+            ]
+          },
+          {
+            "title": "Nonprofit Appeal",
+            "description": "Donation request email with storytelling layout and impact metrics.",
+            "image": "project8.jpg",
+            "file": "nonprofit-appeal.pdf",
+            "tags": [
+              "Storytelling",
+              "Responsive",
+              "Accessible"
+            ]
+          },
+          {
+            "title": "Holiday Greeting",
+            "description": "Animated holiday card with snow effect and personalized message.",
+            "image": "project9.jpg",
+            "file": "holiday-card.pdf",
+            "tags": [
+              "Animation",
+              "Festive",
+              "Interactive"
+            ]
+          },
+          {
+            "title": "Survey Request",
+            "description": "Customer feedback email with embedded rating system.",
+            "image": "project10.jpg",
+            "link": "https://example.com/survey-email",
+            "tags": [
+              "Feedback",
+              "Embedded Widget",
+              "Mobile-optimized"
+            ]
+          }
+        ]
+      },
+      "about": {
+        "title": "About Me",
+        "content": "With 7+ years specializing in email design and development, I create pixel-perfect campaigns that render flawlessly across 90+ email clients. My technical expertise ensures maximum deliverability and engagement.",
+        "image": "profile1.jpg",
+        "skills": [
+          "HTML Email Development",
+          "Responsive Design",
+          "Email Marketing Strategy",
+          "CSS Animation",
+          "AMP for Email",
+          "Litmus Testing",
+          "Mailchimp Templates",
+          "HubSpot Module Development",
+          "Accessibility Compliance",
+          "Dynamic Content"
+        ]
+      },
+      "testimonials": {
+        "title": "Client Testimonials",
+        "items": [
+          {
+            "text": "Our open rates increased by 40% after implementing their email templates. The mobile optimization was particularly impressive.",
+            "authorName": "Sarah Johnson",
+            "authorPosition": "Marketing Director",
+            "authorImage": "profile2.jpg"
+          },
+          {
+            "text": "Fixed rendering issues we'd struggled with for years across Outlook and Apple Mail. Worth every penny.",
+            "authorName": "Michael Chen",
+            "authorPosition": "E-commerce Manager",
+            "authorImage": "profile3.jpg"
+          }
+        ]
+      },
+      "contact": {
+        "title": "Get In Touch",
+        "description": "Ready to elevate your email campaigns? Let's talk.",
+        "recipientEmail": "your.email@example.com",
+        "successMessage": "Thanks for your message! I'll respond within 24 hours."
+      },
+      "footer": {
+        "content": "Specializing in responsive email design since 2016",
+        "socialLinks": [
+          {
+            "icon": "linkedin",
+            "url": "https://linkedin.com/in/yourprofile"
+          },
+          {
+            "icon": "dribbble",
+            "url": "https://dribbble.com/yourprofile"
+          },
+          {
+            "icon": "github",
+            "url": "https://github.com/yourprofile"
+          }
+        ],
+        "copyright": "© 2023 Juan dela Cruz. All rights reserved."
+      }
+    },
+    "style3": {
+      "logo": "Josh Doe",
+      "hero": {
+        "title": "Creative Copywriting That Converts",
+        "subtitle": "Crafting compelling stories that engage and persuade."
+      },
+      "projects": [
+        {
+          "title": "Ad Copy for Tech Startup",
+          "description": "Wrote a series of ad copies for a tech startup's product launch, increasing click-through rates by 35%.",
+          "image": "assets/ad_copy.jpg",
+          "link": "samples/ad_copy.txt"
+        },
+        {
+          "title": "Blog Post on Wellness",
+          "description": "Crafted an SEO-optimized blog post for a wellness brand, driving 20% more organic traffic.",
+          "image": "assets/blog_post.jpg",
+          "link": "samples/blog_post.txt"
+        },
+        {
+          "title": "Email Campaign for Retail",
+          "description": "Developed a 5-part email series for a retail client, boosting open rates by 30%.",
+          "image": "assets/email_campaign.jpg",
+          "link": "samples/email_campaign.txt"
+        },
+        {
+          "title": "Social Media Posts for Fashion",
+          "description": "Created engaging social media content for a fashion brand, growing engagement by 25%.",
+          "image": "assets/social_media.jpg",
+          "link": "samples/social_media.txt"
+        },
+        {
+          "title": "Product Description for E-commerce",
+          "description": "Wrote compelling product descriptions for an e-commerce site, increasing conversions by 15%.",
+          "image": "assets/product_description.jpg",
+          "link": "samples/product_description.txt"
+        },
+        {
+          "title": "Case Study for SaaS Company",
+          "description": "Authored a detailed case study for a SaaS company, highlighting client success and boosting credibility.",
+          "image": "assets/case_study.jpg",
+          "link": "samples/case_study.txt"
+        },
+        {
+          "title": "Newsletter for Non-Profit",
+          "description": "Crafted a monthly newsletter for a non-profit, increasing donor engagement by 20%.",
+          "image": "assets/newsletter.jpg",
+          "link": "samples/newsletter.txt"
+        },
+        {
+          "title": "Landing Page for Fitness App",
+          "description": "Wrote persuasive copy for a fitness app landing page, boosting sign-ups by 40%.",
+          "image": "assets/landing_page.jpg",
+          "link": "samples/landing_page.txt"
+        },
+        {
+          "title": "Press Release for Product Launch",
+          "description": "Authored a press release for a new product, gaining coverage in 5 major outlets.",
+          "image": "assets/press_release.jpg",
+          "link": "samples/press_release.txt"
+        },
+        {
+          "title": "Video Script for Brand Ad",
+          "description": "Created a script for a 30-second brand video, viewed over 100,000 times.",
+          "image": "assets/video_script.jpg",
+          "link": "samples/video_script.txt"
+        },
+        {
+          "title": "White Paper for Tech Firm",
+          "description": "Wrote a comprehensive white paper establishing thought leadership in AI.",
+          "image": "assets/white_paper.jpg",
+          "link": "samples/white_paper.txt"
+        },
+        {
+          "title": "SEO Article for Travel Blog",
+          "description": "Crafted an SEO article for a travel blog, ranking on page 1 of Google.",
+          "image": "assets/seo_article.jpg",
+          "link": "samples/seo_article.txt"
+        },
+        {
+          "title": "Brochure for Real Estate",
+          "description": "Developed compelling brochure copy for a real estate agency, driving inquiries.",
+          "image": "assets/brochure.jpg",
+          "link": "samples/brochure.txt"
+        },
+        {
+          "title": "Slogan for Beverage Brand",
+          "description": "Created a catchy slogan for a beverage brand, used in national campaigns.",
+          "image": "assets/slogan.jpg",
+          "link": "samples/slogan.txt"
+        },
+        {
+          "title": "Website Copy for Startup",
+          "description": "Wrote engaging website copy for a startup, improving user retention.",
+          "image": "assets/website_copy.jpg",
+          "link": "samples/website_copy.txt"
+        },
+        {
+          "title": "Social Ad for Food Delivery",
+          "description": "Crafted targeted social ads for a food delivery service, increasing orders by 30%.",
+          "image": "assets/social_ad.jpg",
+          "link": "samples/social_ad.txt"
+        },
+        {
+          "title": "Email Welcome Series",
+          "description": "Developed a welcome email series for a subscription service, boosting engagement.",
+          "image": "assets/welcome_series.jpg",
+          "link": "samples/welcome_series.txt"
+        },
+        {
+          "title": "Blog Post on Tech Trends",
+          "description": "Wrote a blog post on emerging tech trends, shared over 1,000 times.",
+          "image": "assets/tech_trends.jpg",
+          "link": "samples/tech_trends.txt"
+        },
+        {
+          "title": "Product Review for Gadget",
+          "description": "Authored a detailed product review for a gadget, driving affiliate sales.",
+          "image": "assets/product_review.jpg",
+          "link": "samples/product_review.txt"
+        },
+        {
+          "title": "FAQ Copy for E-commerce",
+          "description": "Wrote clear FAQ copy for an e-commerce site, reducing customer inquiries.",
+          "image": "assets/faq_copy.jpg",
+          "link": "samples/faq_copy.txt"
+        }
+      ],
+      "about": {
+        "text": "I'm a passionate copywriter with 5+ years of experience creating persuasive content for brands worldwide.",
+        "skills": [
+          "SEO Copywriting",
+          "Content Strategy",
+          "Brand Storytelling",
+          "Email Marketing"
+        ]
+      },
+      "testimonials": [
+        {
+          "text": "Their words brought our brand to life!",
+          "author": "Jane Doe, Marketing Director"
+        },
+        {
+          "text": "Exceptional copy that drives results.",
+          "author": "John Smith, CEO"
+        }
+      ],
+      "contact": {
+        "email": "your-email@example.com",
+        "successMessage": "Thank you for your message! I'll get back to you soon."
+      },
+      "footer": {
+        "text": "© 2025 Josh Doe. All rights reserved."
+      },
+      "social": {
+        "linkedin": "https://linkedin.com/in/juan",
+        "twitter": "https://twitter.com/juan",
+        "github": "https://github.com/juan"
+      }
+    },
+    "style4": {
+      "logo": "Juan dela Curz Portfolio",
+      "hero": "Crafting compelling stories through dynamic video editing. Let your vision come to life with professional precision.",
+      "about": "I’m a freelance video editor with 5+ years of experience turning raw footage into polished productions. Whether it's social media clips, documentaries, or promotional videos, I bring clarity and creativity to every cut.",
+      "contact": "Feel free to reach out for collaborations or project inquiries.",
+      "footer": "© 2025 Juan dela Cruz. All rights reserved.",
+      "samples": [
+        {
+          "title": "Travel Montage",
+          "description": "A cinematic travel sequence.",
+          "image": "sample1.jpg",
+          "link": "sample1.txt"
+        },
+        {
+          "title": "Corporate Promo",
+          "description": "Professional branding edit.",
+          "image": "sample2.jpg",
+          "link": "sample2.txt"
+        },
+        {
+          "title": "Vlog Edit",
+          "description": "Engaging daily vlog highlights.",
+          "image": "sample3.jpg",
+          "link": "sample3.txt"
+        },
+        {
+          "title": "Event Recap",
+          "description": "Capturing event energy.",
+          "image": "sample4.jpg",
+          "link": "sample4.txt"
+        },
+        {
+          "title": "Music Video Cut",
+          "description": "Stylized music performance edit.",
+          "image": "sample5.jpg",
+          "link": "sample5.txt"
+        },
+        {
+          "title": "Wedding Highlights",
+          "description": "Romantic story summary.",
+          "image": "sample6.jpg",
+          "link": "sample6.txt"
+        },
+        {
+          "title": "Social Media Snippets",
+          "description": "Short, punchy videos.",
+          "image": "sample7.jpg",
+          "link": "sample7.txt"
+        },
+        {
+          "title": "Interview Sync",
+          "description": "Polished dialogue edits.",
+          "image": "sample8.jpg",
+          "link": "sample8.txt"
+        },
+        {
+          "title": "Product Demo",
+          "description": "Concise product feature edits.",
+          "image": "sample9.jpg",
+          "link": "sample9.txt"
+        },
+        {
+          "title": "Real Estate Tour",
+          "description": "Home walkthrough visual.",
+          "image": "sample10.jpg",
+          "link": "sample10.txt"
+        },
+        {
+          "title": "Documentary Scene",
+          "description": "Narrative-driven editing.",
+          "image": "sample11.jpg",
+          "link": "sample11.txt"
+        },
+        {
+          "title": "Commercial Spot",
+          "description": "High-impact 30-second ad.",
+          "image": "sample12.jpg",
+          "link": "sample12.txt"
+        },
+        {
+          "title": "YouTube Intro",
+          "description": "Channel branding clips.",
+          "image": "sample13.jpg",
+          "link": "sample13.txt"
+        },
+        {
+          "title": "Fitness Reel",
+          "description": "Fast-paced training edits.",
+          "image": "sample14.jpg",
+          "link": "sample14.txt"
+        },
+        {
+          "title": "TikTok Cut",
+          "description": "Viral-ready vertical video.",
+          "image": "sample15.jpg",
+          "link": "sample15.txt"
+        },
+        {
+          "title": "Drone Footage",
+          "description": "Aerial cinematography trim.",
+          "image": "sample16.jpg",
+          "link": "sample16.txt"
+        },
+        {
+          "title": "Livestream Recap",
+          "description": "Condensed highlights.",
+          "image": "sample17.jpg",
+          "link": "sample17.txt"
+        },
+        {
+          "title": "Screencast Tutorial",
+          "description": "Clean, clear instructions.",
+          "image": "sample18.jpg",
+          "link": "sample18.txt"
+        },
+        {
+          "title": "Animation Assembly",
+          "description": "Motion graphics timeline.",
+          "image": "sample19.jpg",
+          "link": "sample19.txt"
+        },
+        {
+          "title": "Behind-the-Scenes",
+          "description": "Fun production shots.",
+          "image": "sample20.jpg",
+          "link": "sample20.txt"
+        }
+      ],
+      "testimonials": [
+        {
+          "quote": "Incredible work! Always on time and exceeds expectations.",
+          "author": "Alex Rivera"
+        },
+        {
+          "quote": "Turned our raw footage into a powerful story.",
+          "author": "Jasmine Kwon"
+        },
+        {
+          "quote": "Creative, professional, and easy to work with!",
+          "author": "Mark DeLuca"
+        }
+      ],
+      "social": {
+        "linkedin": "https://linkedin.com/in/videoeditor",
+        "twitter": "https://twitter.com/videoeditor",
+        "github": "https://github.com/videoeditor"
+      }
+    },
+    "style5": {
+      "logo": "John Remi",
+      "hero": {
+        "title": "Crafting Stories Through Motion",
+        "subtitle": "Bringing Visions to Life, Frame by Frame"
+      },
+      "projects": [
+        {
+          "title": "Dynamic Promo Video",
+          "description": "Engaging promotional video for a tech startup, highlighting key features and benefits.",
+          "image": "assets/sample1.jpg",
+          "link": "samples/sample1.txt"
+        },
+        {
+          "title": "Corporate Explainer",
+          "description": "Animated explainer video simplifying complex corporate services for a broader audience.",
+          "image": "assets/sample2.jpg",
+          "link": "samples/sample2.txt"
+        },
+        {
+          "title": "Event Highlight Reel",
+          "description": "Capturing the energy and key moments of a major industry conference.",
+          "image": "assets/sample3.jpg",
+          "link": "samples/sample3.txt"
+        },
+        {
+          "title": "Product Launch Cinematic",
+          "description": "High-production value video for a new product, focusing on aesthetics and user experience.",
+          "image": "assets/sample4.jpg",
+          "link": "samples/sample4.txt"
+        },
+        {
+          "title": "Social Media Ad Campaign",
+          "description": "Series of short, punchy videos optimized for various social media platforms.",
+          "image": "assets/sample5.jpg",
+          "link": "samples/sample5.txt"
+        },
+        {
+          "title": "Documentary Short",
+          "description": "Compelling short documentary exploring a local community initiative.",
+          "image": "assets/sample6.jpg",
+          "link": "samples/sample6.txt"
+        },
+        {
+          "title": "Music Video Production",
+          "description": "Creative and visually stunning music video for an indie artist.",
+          "image": "assets/sample7.jpg",
+          "link": "samples/sample7.txt"
+        },
+        {
+          "title": "Educational Content Series",
+          "description": "Editing a series of educational videos for an online learning platform.",
+          "image": "assets/sample8.jpg",
+          "link": "samples/sample8.txt"
+        },
+        {
+          "title": "Real Estate Walkthrough",
+          "description": "Immersive video tour of a luxury property, showcasing its unique features.",
+          "image": "assets/sample9.jpg",
+          "link": "samples/sample9.txt"
+        },
+        {
+          "title": "Travel Vlog Montage",
+          "description": "Fast-paced and exciting montage from a travel vlog, capturing adventure.",
+          "image": "assets/sample10.jpg",
+          "link": "samples/sample10.txt"
+        },
+        {
+          "title": "Fitness Training Series",
+          "description": "Energetic and clear training videos for a fitness coach's online program.",
+          "image": "assets/sample11.jpg",
+          "link": "samples/sample11.txt"
+        },
+        {
+          "title": "Wedding Highlight Film",
+          "description": "Emotionally resonant and beautifully crafted highlight film of a wedding day.",
+          "image": "assets/sample12.jpg",
+          "link": "samples/sample12.txt"
+        },
+        {
+          "title": "Game Trailer Edit",
+          "description": "Dynamic trailer for an upcoming video game, building excitement and anticipation.",
+          "image": "assets/sample13.jpg",
+          "link": "samples/sample13.txt"
+        },
+        {
+          "title": "Exploration of Nature",
+          "description": "Calm and mesmerizing video showcasing the beauty of a natural landscape.",
+          "image": "assets/sample14.jpg",
+          "link": "samples/sample14.txt"
+        },
+        {
+          "title": "Food & Recipe Series",
+          "description": "Appetizing and instructional videos for a cooking channel.",
+          "image": "assets/sample15.jpg",
+          "link": "samples/sample15.txt"
+        },
+        {
+          "title": "Fashion Lookbook",
+          "description": "Stylish and modern video presenting a new fashion collection.",
+          "image": "assets/sample16.jpg",
+          "link": "samples/sample16.txt"
+        },
+        {
+          "title": "Company Profile Video",
+          "description": "Comprehensive video introducing a company, its values, and team.",
+          "image": "assets/sample17.jpg",
+          "link": "samples/sample17.txt"
+        },
+        {
+          "title": "Short Film Post-Production",
+          "description": "Full post-production for an independent short film, including color grading and sound design.",
+          "image": "assets/sample18.jpg",
+          "link": "samples/sample18.txt"
+        },
+        {
+          "title": "Interview Series",
+          "description": "Clean and professional edits for a series of expert interviews.",
+          "image": "assets/sample19.jpg",
+          "link": "samples/sample19.txt"
+        },
+        {
+          "title": "Sports Action Montage",
+          "description": "High-energy montage capturing peak moments from various sports events.",
+          "image": "assets/sample20.jpg",
+          "link": "samples/sample20.txt"
+        }
+      ],
+      "about": {
+        "text": "Hello! I'm a passionate video editor with over 8 years of experience in crafting compelling visual narratives. From dynamic promotional content to intricate documentary edits, my goal is always to bring stories to life with precision and creativity. I specialize in post-production, color grading, sound design, and motion graphics, using industry-standard software to deliver high-quality results. I believe that every frame has a purpose, and I'm dedicated to ensuring that your vision not only looks incredible but also resonates deeply with your audience. Let's create something unforgettable together!",
+        "skills": [
+          "Adobe Premiere Pro",
+          "After Effects",
+          "DaVinci Resolve",
+          "Final Cut Pro",
+          "Motion Graphics",
+          "Color Grading",
+          "Sound Design",
+          "VFX",
+          "Storytelling",
+          "Video Compression"
+        ],
+        "profileImage": "assets/profile.jpg"
+      },
+      "testimonials": [
+        {
+          "text": "The video editor delivered exceptional work! They perfectly captured our brand's essence and the final video exceeded all our expectations. Highly recommended!",
+          "author": "Client A"
+        },
+        {
+          "text": "An absolute professional. Their keen eye for detail and understanding of pacing transformed our raw footage into a masterpiece. We'll definitely be working with them again.",
+          "author": "Client B"
+        },
+        {
+          "text": "Outstanding creativity and technical skill. The video editor took our complex ideas and translated them into a clear, engaging, and visually stunning piece.",
+          "author": "Client C"
+        }
+      ],
+      "contact": {
+        "email": "videoeditor@example.com",
+        "successMessage": "Thank you for your message! I'll get back to you soon."
+      },
+      "footer": {
+        "text": "© 2025 John Remi Portfolio"
+      },
+      "social": {
+        "linkedin": "https://linkedin.com/in/yourvideoeditor",
+        "twitter": "https://twitter.com/yourvideoeditor",
+        "github": "https://github.com/yourvideoeditor"
+      }
+    },
+    "style6": {
+      "siteName": "Jane dela Cruz",
+      "copyrightText": "© 2023 Jane dela Cruz Photography. All rights reserved.<br> 123456789 - 123ST, ABC CITY, ABC COUNTRY.",
+      "hero": {
+        "title": "Capturing Life's Beautiful Moments",
+        "subtitle": "Professional photography for portraits, landscapes, and special events",
+        "backgroundImage": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+      },
+      "projects": [
+        {
+          "title": "Urban Portrait Series",
+          "description": "A collection of portraits taken in various urban environments, showcasing the contrast between people and city landscapes.",
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+          "highResUrl": "https://example.com/highres/urban-portrait",
+          "categories": [
+            "portrait"
+          ]
+        },
+        {
+          "title": "Mountain Sunrise",
+          "description": "Captured during a hiking trip in the Rockies, this landscape showcases the breathtaking colors of sunrise over mountain peaks.",
+          "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+          "highResUrl": "https://example.com/highres/mountain-sunrise",
+          "categories": [
+            "landscape"
+          ]
+        },
+        {
+          "title": "Product Photography - Watches",
+          "description": "Commercial product photography for a luxury watch brand, highlighting craftsmanship and details.",
+          "image": "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+          "highResUrl": "https://example.com/highres/watch-product",
+          "categories": [
+            "product"
+          ]
+        },
+        {
+          "title": "Wedding Day",
+          "description": "Candid moments from a beautiful outdoor wedding ceremony and reception.",
+          "image": "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+          "highResUrl": "https://example.com/highres/wedding-day",
+          "categories": [
+            "event"
+          ]
+        },
+        {
+          "title": "Beach Portrait",
+          "description": "Environmental portrait session at sunset on Malibu Beach.",
+          "image": "https://images.unsplash.com/photo-1503104834685-7205e8607eb9?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+          "highResUrl": "https://example.com/highres/beach-portrait",
+          "categories": [
+            "portrait"
+          ]
+        },
+        {
+          "title": "Desert Landscape",
+          "description": "The stark beauty of the Arizona desert captured at golden hour.",
+          "image": "https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+          "highResUrl": "https://example.com/highres/desert-landscape",
+          "categories": [
+            "landscape"
+          ]
+        },
+        {
+          "title": "Jewelry Collection",
+          "description": "Product photography for a boutique jewelry designer's new collection.",
+          "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+          "highResUrl": "https://example.com/highres/jewelry-collection",
+          "categories": [
+            "product"
+          ]
+        },
+        {
+          "title": "Corporate Event",
+          "description": "Coverage of a tech company's annual conference and party.",
+          "image": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+          "highResUrl": "https://example.com/highres/corporate-event",
+          "categories": [
+            "event"
+          ]
+        }
+      ],
+      "about": {
+        "bio": "<p>I'm Jane dela Cruz, a professional photographer with over 10 years of experience capturing special moments and creating visual stories. My passion lies in finding the perfect light and composition to create images that evoke emotion and tell a story.</p><p>After studying Fine Arts at the University of Washington, I began my career as a photojournalist before transitioning to commercial and portrait photography. My work has been featured in several publications and exhibitions.</p><p>When I'm not behind the camera, you can find me hiking in the mountains or teaching photography workshops to aspiring photographers.</p>",
+        "profileImage": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+        "skills": [
+          "Portrait Photography",
+          "Landscape Photography",
+          "Product Photography",
+          "Event Photography",
+          "Adobe Photoshop",
+          "Adobe Lightroom",
+          "Lighting Techniques",
+          "Photo Editing",
+          "Color Grading",
+          "Studio Lighting"
+        ]
+      },
+      "testimonials": [
+        {
+          "text": "Jane captured our wedding day perfectly. Her ability to find the right moments and compose beautiful shots is incredible. We'll cherish these photos forever.",
+          "author": "Sarah & Michael Johnson"
+        },
+        {
+          "text": "Working with Jane on our product campaign was a pleasure. She understood our brand aesthetic immediately and delivered stunning images that boosted our sales.",
+          "author": "David Chen, Luxe Watches"
+        },
+        {
+          "text": "The family portraits Jane took for us are absolutely beautiful. She made us all feel comfortable and captured our family's personality perfectly.",
+          "author": "The Williams Family"
+        }
+      ],
+      "socialLinks": [
+        {
+          "platform": "instagram",
+          "url": "https://instagram.com"
+        },
+        {
+          "platform": "500px",
+          "url": "https://500px.com"
+        },
+        {
+          "platform": "flickr",
+          "url": "https://flickr.com"
+        },
+        {
+          "platform": "behance",
+          "url": "https://behance.net"
+        }
+      ]
+    },
+    "style7": {
+      "logo": "Alexandra Carter",
+      "hero": {
+        "title": "Email Copywriting That Boosts Conversions",
+        "subtitle": "Crafting high-converting email sequences that turn subscribers into customers"
+      },
+      "projects": [
+        {
+          "title": "Welcome Series for SaaS Company",
+          "description": "Developed a 5-email onboarding sequence that increased trial-to-paid conversion by 42% through strategic storytelling and clear CTAs.",
+          "image": "assets/saas_welcome.jpg",
+          "link": "samples/saas_welcome.txt"
+        },
+        {
+          "title": "Black Friday Campaign for E-commerce",
+          "description": "Created a complete 12-email holiday campaign generating $250k+ in revenue with urgency-driven copy and segmented messaging.",
+          "image": "assets/black_friday.jpg",
+          "link": "samples/black_friday.txt"
+        },
+        {
+          "title": "Lead Nurture Sequence for B2B",
+          "description": "Designed a 7-email nurture flow that improved lead qualification by 35% using pain-point focused storytelling and educational content.",
+          "image": "assets/b2b_nurture.jpg",
+          "link": "samples/b2b_nurture.txt"
+        },
+        {
+          "title": "Re-engagement Campaign for Fitness App",
+          "description": "Wrote a win-back series that reactivated 28% of dormant users with personalized subject lines and benefit-driven copy.",
+          "image": "assets/fitness_reengage.jpg",
+          "link": "samples/fitness_reengage.txt"
+        },
+        {
+          "title": "VIP Launch Sequence for Course Creator",
+          "description": "Crafted a high-touch 10-email launch sequence that sold out a $2,000 course in 72 hours using scarcity and social proof.",
+          "image": "assets/vip_launch.jpg",
+          "link": "samples/vip_launch.txt"
+        },
+        {
+          "title": "Cart Abandonment Series for Retail",
+          "description": "Developed a 3-email abandonment flow that recovered 19% of lost sales through strategic timing and incentive offers.",
+          "image": "assets/cart_abandonment.jpg",
+          "link": "samples/cart_abandonment.txt"
+        },
+        {
+          "title": "Weekly Newsletter for Finance Brand",
+          "description": "Transformed a boring financial newsletter into an engaging must-read with a 58% open rate through conversational storytelling.",
+          "image": "assets/finance_newsletter.jpg",
+          "link": "samples/finance_newsletter.txt"
+        },
+        {
+          "title": "Upsell Sequence for Subscription Service",
+          "description": "Created a tiered upgrade path that increased ARPU by 22% through benefit-focused email copy and strategic timing.",
+          "image": "assets/upsell_sequence.jpg",
+          "link": "samples/upsell_sequence.txt"
+        },
+        {
+          "title": "Post-Purchase Follow-up Series",
+          "description": "Designed a customer delight sequence that boosted repeat purchases by 31% through educational content and surprise offers.",
+          "image": "assets/post_purchase.jpg",
+          "link": "samples/post_purchase.txt"
+        },
+        {
+          "title": "Cold Outreach Campaign for Agency",
+          "description": "Wrote a personalized outreach sequence that booked 15 discovery calls per week with a 38% response rate.",
+          "image": "assets/cold_outreach.jpg",
+          "link": "samples/cold_outreach.txt"
+        },
+        {
+          "title": "Event Promotion Emails for Conference",
+          "description": "Crafted urgency-driven emails that sold out a 500-person event 3 weeks early through tiered pricing and FOMO tactics.",
+          "image": "assets/event_promotion.jpg",
+          "link": "samples/event_promotion.txt"
+        },
+        {
+          "title": "Survey Invitation Sequence",
+          "description": "Increased survey completion rate from 8% to 34% by reframing the value proposition and simplifying the ask.",
+          "image": "assets/survey_emails.jpg",
+          "link": "samples/survey_emails.txt"
+        }
+      ],
+      "about": {
+        "text": "I'm a conversion-focused email copywriter with 7 years of experience crafting email sequences that consistently outperform industry benchmarks. Specializing in the complete customer journey - from first welcome to loyal advocate - I combine psychological triggers with compelling storytelling to create emails that get opened, read, and acted upon. My approach blends data-driven optimization with creative messaging that resonates on a human level. I've helped SaaS companies, e-commerce brands, and service providers generate millions in additional revenue through strategic email copy that builds relationships while driving measurable business results.",
+        "skills": [
+          "Email Sequence Strategy",
+          "Conversion Copywriting",
+          "A/B Testing & Optimization",
+          "Customer Journey Mapping",
+          "Behavioral Psychology",
+          "CRM Platform Expertise",
+          "Segmentation Strategy",
+          "Lead Nurturing",
+          "Automation Workflows"
+        ]
+      },
+      "testimonials": [
+        {
+          "text": "Alexandra's email sequences transformed our business. She took our 12% conversion rate to 28% in just three months. Her ability to understand our audience and craft messages that resonate is unparalleled. We've hired many copywriters over the years, but none have delivered results like this.",
+          "author": "Michael Chen, VP Marketing at GrowthLabs"
+        },
+        {
+          "text": "Working with Alexandra was a game-changer for our email program. She doesn't just write copy - she develops complete email ecosystems that work together to guide subscribers toward conversion. Our revenue from email has increased 3x since implementing her sequences, and we continue to see improvement months later.",
+          "author": "Sarah Johnson, Director of E-commerce at StyleHaven"
+        },
+        {
+          "text": "As a SaaS founder, I was skeptical about hiring a specialist email copywriter. Alexandra proved me wrong within weeks. Her welcome sequence alone increased our trial-to-paid conversion by 18 percentage points. She has an uncanny ability to translate complex features into compelling benefits that drive action.",
+          "author": "David Park, CEO at CloudTask"
+        }
+      ],
+      "contact": {
+        "email": "alexandra@emailcopypro.com",
+        "successMessage": "Thanks for your message! I'll respond within 24 hours. For immediate assistance, you can also text me at (555) 123-4567."
+      },
+      "footer": {
+        "text": "© 2025 Alexandra Carter Email Copywriting. All rights reserved."
+      },
+      "social": {
+        "linkedin": "https://linkedin.com/in/alexandracarter-email",
+        "twitter": "https://twitter.com/emailcopyalex",
+        "instagram": "https://instagram.com/emailcopywritertips",
+        "github": ""
+      }
+    },
+    "style8": {
+      "siteName": "Aura Designs",
+      "copyrightText": "© 2023 Aura Designs. All rights reserved.",
+      "hero": {
+        "title": "Crafting Elegance Through Fabric",
+        "subtitle": "Innovative fashion designs that blend classic sophistication with modern trends.",
+        "backgroundImage": "assets/background.jpg"
+      },
+      "projects": [
+        {
+          "title": "Spring/Summer '24 Collection",
+          "description": "A vibrant ready-to-wear collection inspired by blooming florals and soft pastels.",
+          "image": "assets/1.jpg",
+          "highResUrl": "https://example.com/collection/spring-summer-24",
+          "categories": []
+        },
+        {
+          "title": "Étoile de Nuit (Haute Couture)",
+          "description": "An exquisite haute couture gown, meticulously handcrafted with intricate beadwork and flowing silk.",
+          "image": "assets/2.jpg",
+          "highResUrl": "https://example.com/collection/etoile-de-nuit",
+          "categories": []
+        },
+        {
+          "title": "Bridal Bliss Gown",
+          "description": "A timeless bridal gown featuring delicate lace, a flattering silhouette, and a cathedral train.",
+          "image": "assets/3.jpg",
+          "highResUrl": "https://example.com/collection/bridal-bliss",
+          "categories": []
+        },
+        {
+          "title": "Leather Accessories Line",
+          "description": "A sophisticated line of handcrafted leather bags and wallets, emphasizing durability and style.",
+          "image": "assets/4.jpg",
+          "highResUrl": "https://example.com/collection/leather-accessories",
+          "categories": []
+        },
+        {
+          "title": "Autumn/Winter '23 Collection",
+          "description": "Warm textures and rich earthy tones define this cozy yet chic ready-to-wear collection.",
+          "image": "assets/5.jpg",
+          "highResUrl": "https://example.com/collection/autumn-winter-23",
+          "categories": []
+        },
+        {
+          "title": "Le Jardin Secret (Haute Couture)",
+          "description": "A bespoke creation inspired by a secret garden, featuring hand-painted details and delicate organza.",
+          "image": "assets/6.jpg",
+          "highResUrl": "https://example.com/collection/le-jardin-secret",
+          "categories": []
+        },
+        {
+          "title": "The Modern Bride Collection",
+          "description": "Contemporary bridal wear for the minimalist bride, with clean lines and sophisticated simplicity.",
+          "image": "assets/7.jpg",
+          "highResUrl": "https://example.com/collection/modern-bride",
+          "categories": []
+        },
+        {
+          "title": "Silk Scarf Collection",
+          "description": "Limited edition silk scarves with unique digital prints, adding a touch of luxury to any outfit.",
+          "image": "assets/8.jpg",
+          "highResUrl": "https://example.com/collection/silk-scarves",
+          "categories": []
+        }
+      ],
+      "about": {
+        "bio": "<p>I'm Alexia Vance, a passionate fashion designer dedicated to creating timeless and innovative pieces. My journey began with a fascination for textiles and a desire to tell stories through garments. I believe fashion is not just about clothing, but about expressing identity and embracing artistry.</p><p>After graduating from the Central Saint Martins, I honed my skills working with renowned fashion houses in Paris and Milan. My collections often draw inspiration from art, nature, and cultural narratives, blending classic techniques with a contemporary vision.</p><p>Every stitch, every fabric choice, and every silhouette is carefully considered to ensure a harmonious balance of aesthetics and wearability. I am committed to sustainable practices and ethical production, striving to make a positive impact on the industry.</p>",
+        "profileImage": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "skills": [
+          "Fashion Illustration",
+          "Pattern Making",
+          "Draping",
+          "Textile Selection",
+          "Garment Construction",
+          "Trend Forecasting",
+          "Adobe Illustrator",
+          "Adobe Photoshop",
+          "Sustainable Design",
+          "Haute Couture Techniques"
+        ]
+      },
+      "testimonials": [
+        {
+          "text": "Alexia's designs are truly breathtaking. She created a custom gown for me that was beyond anything I imagined – elegant, unique, and perfectly fitted.",
+          "author": "Isabella Rossi"
+        },
+        {
+          "text": "The attention to detail in Aura Designs' ready-to-wear line is exceptional. Their pieces are not only stylish but also incredibly comfortable and well-made.",
+          "author": "Marcus Thorne, Fashion Critic"
+        },
+        {
+          "text": "Working with Alexia on my bridal gown was a dream. She listened to my vision and brought it to life with such professionalism and artistry.",
+          "author": "Olivia Chen"
+        }
+      ],
+      "socialLinks": [
+        {
+          "platform": "instagram",
+          "url": "https://instagram.com/yourfashionbrand"
+        },
+        {
+          "platform": "pinterest",
+          "url": "https://pinterest.com/yourfashionbrand"
+        },
+        {
+          "platform": "instagram",
+          "url": "https://linkedin.com/in/yourfashiondesigner"
+        },
+        {
+          "platform": "behance",
+          "url": "https://behance.net/yourfashiondesigner"
+        }
+      ]
+    },
+    "style9": {
+      "siteDetails": {
+        "logo": "Jane Doe | Journalist",
+        "heroText": "Crafting Stories That Matter",
+        "footer": "© 2025 Jane Doe. All rights reserved.",
+        "backgroundType": "image",
+        "backgroundValue": "assets/background.jpg"
+      },
+      "projects": [
+        {
+          "title": "The Rise of Urban Farming",
+          "description": "An in-depth look at how urban farming is transforming city landscapes.",
+          "image": "assets/1.jpg",
+          "linkToCopy": "https://example.com/urban-farming"
+        },
+        {
+          "title": "Tech's Impact on Education",
+          "description": "Exploring how technology is reshaping classrooms worldwide.",
+          "image": "assets/2.jpg",
+          "linkToCopy": "https://example.com/tech-education"
+        },
+        {
+          "title": "Climate Change Policies",
+          "description": "Analysis of global policies tackling climate change.",
+          "image": "assets/3.jpg",
+          "linkToCopy": "https://example.com/climate-policies"
+        },
+        {
+          "title": "The Gig Economy Boom",
+          "description": "How the gig economy is redefining work.",
+          "image": "assets/4.jpg",
+          "linkToCopy": "https://example.com/gig-economy"
+        },
+        {
+          "title": "Mental Health Awareness",
+          "description": "Breaking the stigma around mental health in workplaces.",
+          "image": "assets/5.jpg",
+          "linkToCopy": "https://example.com/mental-health"
+        },
+        {
+          "title": "Sustainable Fashion Trends",
+          "description": "How the fashion industry is going green.",
+          "image": "assets/6.jpg",
+          "linkToCopy": "https://example.com/sustainable-fashion"
+        }
+      ],
+      "about": {
+        "text": "I'm Jane Doe, a passionate journalist with over a decade of experience covering technology, culture, and environmental issues. My work has been featured in leading publications, and I strive to tell stories that inform and inspire.",
+        "skills": [
+          "Investigative Reporting",
+          "Feature Writing",
+          "SEO",
+          "Editing",
+          "Social Media Strategy"
+        ],
+        "profileImage": "assets/profile.jpg"
+      },
+      "testimonials": [
+        {
+          "text": "Jane's articles are always well-researched and engaging. A true professional!",
+          "author": "John Smith, Editor at News Daily"
+        },
+        {
+          "text": "Her ability to distill complex topics into compelling stories is unmatched.",
+          "author": "Sarah Lee, Publisher"
+        }
+      ],
+      "socialLinks": {
+        "twitter": "https://twitter.com/janedoe",
+        "linkedin": "https://linkedin.com/in/janedoe",
+        "medium": "https://medium.com/@janedoe"
+      }
+    },
+    "style10": {
+      "basicInfo": {
+        "title": "Jessica Jone's Portfolio",
+        "logo": "Jessica Jones"
+      },
+      "navigation": [
+        {
+          "text": "Work",
+          "link": "#work"
+        },
+        {
+          "text": "About",
+          "link": "#about"
+        },
+        {
+          "text": "Testimonials",
+          "link": "#testimonials"
+        },
+        {
+          "text": "Contact",
+          "link": "#contact"
+        }
+      ],
+      "hero": {
+        "title": "Conversion-Driven Landing Page Designer",
+        "subtitle": "I craft high-performing landing pages that convert visitors into leads and customers for your business.",
+        "buttonText": "See My Designs",
+        "image": "profile.jpg",
+        "bgColor": "#f0f2f5"
+      },
+      "work": {
+        "title": "My Landing Page Designs",
+        "projects": [
+          {
+            "title": "SaaS Product Showcase",
+            "description": "Designed a clean, engaging landing page to highlight key features and benefits for a new SaaS platform.",
+            "image": "landing_saas.jpg",
+            "link": "https://example.com/saas-landing-page",
+            "tags": [
+              "UI/UX",
+              "Lead Gen",
+              "Responsive"
+            ]
+          },
+          {
+            "title": "E-commerce Product Launch",
+            "description": "High-impact page for a new consumer product, focusing on compelling visuals and clear calls to action.",
+            "image": "landing_ecommerce.jpg",
+            "link": "https://example.com/ecommerce-launch",
+            "tags": [
+              "Conversion",
+              "Mobile-first",
+              "A/B Testing"
+            ]
+          },
+          {
+            "title": "Webinar Registration Page",
+            "description": "Optimized page to maximize sign-ups for a marketing webinar, with trust signals and clear agenda.",
+            "image": "landing_webinar.jpg",
+            "file": "webinar_lp_mockup.pdf",
+            "tags": [
+              "Event",
+              "Optimized",
+              "Forms"
+            ]
+          },
+          {
+            "title": "Real Estate Lead Capture",
+            "description": "Developed a localized landing page for property inquiries with integrated map and contact form.",
+            "image": "landing_realestate.jpg",
+            "file": "real_estate_lp_case_study.pdf",
+            "tags": [
+              "Local SEO",
+              "CRM Integration",
+              "Geo-targeting"
+            ]
+          },
+          {
+            "title": "Fitness Program Enrollment",
+            "description": "Designed a persuasive page for a fitness challenge, featuring testimonials and progress tracking.",
+            "image": "landing_fitness.jpg",
+            "link": "https://example.com/fitness-program",
+            "tags": [
+              "Health",
+              "Motivation",
+              "Video"
+            ]
+          },
+          {
+            "title": "Financial Services Consult",
+            "description": "Professional and trustworthy page for booking financial consultations, emphasizing security and expertise.",
+            "image": "landing_finance.jpg",
+            "file": "finance_lp_report.pdf",
+            "tags": [
+              "B2B",
+              "Trust",
+              "Booking"
+            ]
+          },
+          {
+            "title": "Mobile App Download Page",
+            "description": "Sleek landing page designed to drive app installations with direct links to app stores and feature highlights.",
+            "image": "landing_app.jpg",
+            "link": "https://example.com/app-download",
+            "tags": [
+              "App Marketing",
+              "Minimalist",
+              "Speed"
+            ]
+          },
+          {
+            "title": "Educational Course Enrollment",
+            "description": "Engaging page for online course sign-ups, showcasing curriculum, instructor bios, and student reviews.",
+            "image": "landing_education.jpg",
+            "file": "course_lp_guide.pdf",
+            "tags": [
+              "E-learning",
+              "Enrollment",
+              "Testimonials"
+            ]
+          },
+          {
+            "title": "Charity Donation Campaign",
+            "description": "Emotionally resonant landing page for a fundraising appeal, emphasizing impact and ease of giving.",
+            "image": "landing_charity.jpg",
+            "file": "charity_lp_impact.pdf",
+            "tags": [
+              "Non-profit",
+              "Fundraising",
+              "Storytelling"
+            ]
+          },
+          {
+            "title": "Software Demo Request",
+            "description": "Clean and concise page for requesting a software demo, focusing on a clear form and benefit-driven copy.",
+            "image": "landing_software_demo.jpg",
+            "link": "https://example.com/software-demo",
+            "tags": [
+              "B2B",
+              "Demo",
+              "Simplicity"
+            ]
+          }
+        ]
+      },
+      "about": {
+        "title": "About Jessica Jones",
+        "content": "I'm a dedicated landing page designer with over 6 years of experience, specializing in creating high-converting web experiences. My passion lies in combining aesthetic design with strategic user psychology to drive measurable results for businesses across various industries. I'm adept at A/B testing, user journey mapping, and collaborating with marketing teams to exceed KPIs.",
+        "image": "profile1.jpg",
+        "skills": [
+          "Conversion Rate Optimization (CRO)",
+          "UI/UX Design",
+          "A/B Testing & Optimization",
+          "HTML5 & CSS3",
+          "Responsive Web Design",
+          "Figma / Sketch / Adobe XD",
+          "Google Analytics",
+          "Heatmaps & Session Recordings",
+          "Copywriting Principles",
+          "Marketing Automation Integration"
+        ]
+      },
+      "testimonials": {
+        "title": "Client Success Stories",
+        "items": [
+          {
+            "text": "Jessica's landing pages increased our lead conversion rate by 25% in the first quarter alone. Her attention to detail and understanding of our target audience was exceptional.",
+            "authorName": "David Lee",
+            "authorPosition": "Head of Digital Marketing, Tech Solutions Inc.",
+            "authorImage": "profile2.jpg"
+          },
+          {
+            "text": "The new landing page Jessica designed for our product launch significantly boosted our sign-ups. Her designs are not only beautiful but also incredibly effective.",
+            "authorName": "Emily White",
+            "authorPosition": "Product Manager, Creative Brands Co.",
+            "authorImage": "profile3.jpg"
+          }
+        ]
+      },
+      "contact": {
+        "title": "Let's Build High-Converting Pages",
+        "description": "Ready to turn more visitors into customers? Reach out and let's discuss your next project.",
+        "recipientEmail": "jessica.jones.design@example.com",
+        "successMessage": "Your message is on its way! I'll get back to you within one business day."
+      },
+      "footer": {
+        "content": "Crafting compelling digital experiences since 2018",
+        "socialLinks": [
+          {
+            "icon": "linkedin",
+            "url": "https://linkedin.com/in/jessicajones-lpdesigner"
+          },
+          {
+            "icon": "behance",
+            "url": "https://behance.net/jessicajonesdesigns"
+          },
+          {
+            "icon": "twitter",
+            "url": "https://twitter.com/jessicajoneslp"
+          }
+        ],
+        "copyright": "© 2025 Jessica Jones. All rights reserved."
+      }
+    }
+  }
+}
