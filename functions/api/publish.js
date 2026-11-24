@@ -24,7 +24,10 @@
 // holding an HMAC of the license key (PUBLISH_OWNER_SECRET), and later updates
 // must present a key that hashes to the same value. Without it, any valid key
 // could force-update any existing branch by copying its public name into
-// data.json. Requires one more secret:
+// data.json. An update ID (X-Resume-Id) is honored only when it looks like a
+// branch this endpoint could have created for the same site type, and a branch
+// without the marker is refused rather than claimed, so the base branch can
+// never be a target. Requires one more secret:
 //   PUBLISH_OWNER_SECRET — any long random string. Changing it orphans every
 //   existing site (they can no longer be updated) and invalidates every
 //   resume/portfolio pair token.
@@ -143,9 +146,9 @@ async function readBranchFile(gh, ref, path) {
   return { text: await res.text() };
 }
 
-// A missing marker means the branch predates ownership tracking: let this
-// caller claim it (the marker is written on this same publish) rather than
-// locking every existing customer out of their own site.
+// A missing marker means the branch predates ownership tracking. The caller
+// refuses to update it: claiming it here would let any license key overwrite a
+// legacy site whose public branch name is known.
 async function readBranchOwner(gh, branch) {
   const file = await readBranchFile(gh, branch, OWNER_FILE);
   if (file.missing || file.error) return file;
@@ -179,6 +182,13 @@ function siteTypeOf(id) {
   if (PROFILE_ID_PATTERN.test(id)) return 'profile';
   if (PORTFOLIO_ID_PATTERN.test(id)) return 'portfolio';
   return 'resume';
+}
+
+// An update ID force-updates its branch, so it is only honored when it is a
+// name this endpoint could have produced for this site type. The base branch
+// and hand-picked names always start a new site instead.
+function isUpdatableId(id, selfType) {
+  return SITE_ID_PATTERN.test(id) && id !== BASE_BRANCH && siteTypeOf(id) === selfType;
 }
 
 // Profiles are served at their indexable /p/<slug> URL; the other types at
@@ -465,8 +475,8 @@ export async function onRequestPost({ request, env }) {
     }
 
     // Determine clean personal branch name with collision protection
-    const incomingId = request.headers.get('X-Resume-Id');
-    let branchName = incomingId;
+    const incomingId = (request.headers.get('X-Resume-Id') || '').trim();
+    let branchName = incomingId || null;
 
     // --- AUTOMATIC MIGRATION FOR OLD RANDOM IDS ---
     // If incoming ID is an old random string (e.g. "5f4ef677", "resume-5f4ef677", or 8-char hex),
@@ -491,8 +501,24 @@ export async function onRequestPost({ request, env }) {
     const slug = fullSlug.slice(0, slugRoom).replace(/-+$/, '');
     const branchSlug = slug ? slug + siteSuffix : '';
 
+    const selfType = isProfile ? 'profile' : isPortfolio ? 'portfolio' : 'resume';
+
+    // 1b. X-Resume-Id is only honored for a branch name this endpoint could
+    //     have created for the same site type; anything else is treated as a
+    //     new site (and therefore creates a fresh branch).
+    if (branchName && !isUpdatableId(branchName, selfType)) branchName = null;
+
     // 2. If candidate name changed completely (e.g. user previously published "john-doe"
     //    but now creates for "jane-smith"), treat as new site instead of overwriting!
+    if (branchName && !branchSlug) {
+      return Response.json(
+        {
+          error: 'Publishing needs your name to confirm which site you are updating. Add it in your details and try again.',
+          code: 'name_required',
+        },
+        { status: 400 }
+      );
+    }
     if (branchName && branchSlug) {
       const matchesName = branchName === branchSlug || branchName.startsWith(`${branchSlug}-`);
       if (!matchesName) {
@@ -543,7 +569,16 @@ export async function onRequestPost({ request, env }) {
       if (owner.error) {
         return Response.json({ error: owner.error }, { status: 502 });
       }
-      if (!owner.missing && !sameToken(owner.token, ownerHash)) {
+      if (owner.missing) {
+        return Response.json(
+          {
+            error: 'This published site predates ownership tracking, so it cannot be updated with a license key yet. Publish under a new name, or message us so we can verify and move it.',
+            code: 'branch_unclaimed',
+          },
+          { status: 403 }
+        );
+      }
+      if (!sameToken(owner.token, ownerHash)) {
         return Response.json(
           {
             error: 'This published site belongs to a different license key. Publish under a different name in your details, or use the key that created it.',
@@ -559,7 +594,6 @@ export async function onRequestPost({ request, env }) {
     //    otherwise an update keeps the pairing this branch already had. The
     //    sibling's own links are pulled in too, so publishing any one of the
     //    three reconnects the whole set.
-    const selfType = isProfile ? 'profile' : isPortfolio ? 'portfolio' : 'resume';
     const requested = await resolveSibling({
       gh, ownerSecret, request, branchName, fullSlug, selfType,
     });
