@@ -2040,6 +2040,13 @@ function blobToBase64(blob) {
 }
 
 
+// A JSON <script> element ends at the first literal "</script>", so a bio or
+// title containing one would close the tag early. Escaping "<" and ">" as
+// \u003c / \u003e keeps the JSON valid and renders identically.
+function safeJsonLd(value) {
+  return JSON.stringify(value, null, 2).replace(/</g, '\\u003c').replace(/>/g, '\\u003e');
+}
+
 // --- SEO & GOOGLE STRUCTURED DATA INJECTOR (schema.org/Person) ---
 function injectSeoHeadTags(html, data) {
   if (!html || !data) return html;
@@ -2099,7 +2106,7 @@ function injectSeoHeadTags(html, data) {
   <meta property="og:description" content="${safeBio}" />
   <meta property="og:type" content="profile" />
   <script type="application/ld+json" id="rp-google-schema">
-${JSON.stringify(schemaObj, null, 2)}
+${safeJsonLd(schemaObj)}
   </script>`;
 
     if (!html.includes('id="rp-google-schema"') && html.includes('</head>')) {
