@@ -48,6 +48,11 @@
 // x-robots-tag: noindex by Cloudflare; the canonical points at the
 // resumepro.pages.dev/p/<slug> proxy, which is the URL that gets indexed.
 
+// Uploaded files: each branch is deployed by Pages on its own, so only
+// template content is accepted. Absolute paths, dot-segments, Pages special
+// files (_headers, _redirects, _routes.json, _worker.js) and anything under
+// functions/ are refused with 400 before any blob is written.
+
 import { verifyLicense } from './_license.js';
 
 const OWNER = 'apdg21';
@@ -68,6 +73,21 @@ const SITE_ID_PATTERN = /^[a-z0-9][a-z0-9-]{0,62}$/;
 const PORTFOLIO_ID_PATTERN = /-portfolio(?:-\d+)?$/;
 const PROFILE_ID_PATTERN = /-profile(?:-\d+)?$/;
 const SITE_SUFFIXES = { resume: '', portfolio: PORTFOLIO_BRANCH_SUFFIX, profile: PROFILE_BRANCH_SUFFIX };
+
+// Each branch is deployed by Pages on its own, so a caller-supplied special
+// file or Functions source could change how their site is served (or run code
+// server-side). Templates ship only index.html, main.js, style.css, data.json
+// and assets/*.
+const BLOCKED_FILES = new Set(['_headers', '_redirects', '_routes.json', '_worker.js']);
+
+function isBlockedUploadPath(filePath) {
+  const path = String(filePath);
+  if (!path || path.includes('\0') || path.includes('\\') || path.startsWith('/')) return true;
+  const segments = path.split('/');
+  if (segments.some((segment) => !segment || segment === '.' || segment === '..' || segment.startsWith('.'))) return true;
+  if (segments[0].toLowerCase() === 'functions') return true;
+  return BLOCKED_FILES.has(segments[segments.length - 1].toLowerCase());
+}
 
 async function hmacHex(secret, message) {
   const enc = new TextEncoder();
@@ -104,6 +124,121 @@ export const profilePublicUrl = (branch) => `${PUBLIC_SITE_ORIGIN}/p/${publicPro
 const escapeAttr = (value) => String(value)
   .replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
+// Every resume/portfolio/profile template ships its demo markup and then calls
+// fetch('data.json') to swap in the owner's content. On a published site that
+// leaves the demo on screen for as long as the request takes -- data.json is
+// served with "max-age=0, must-revalidate", so it is always in the critical
+// path -- and the <title>/link previews read "Your Name" until then.
+//
+// Publishing is the first moment the data and the page exist together, so the
+// data is baked into <head> and a tiny shim answers the page's own
+// fetch('data.json') from it. Nothing template-specific: the template, plus
+// rp-site-link.js and rp-pdf.js, keep calling fetch('data.json') and simply get
+// the answer without a network round trip. The page's markup then stays hidden
+// until that answer has been through the template's renderer (the shim reveals
+// it on the frame after the data is read), so the demo is never on screen at
+// all -- including on a slow phone. Oversized payloads (a very large inline
+// photo) are left alone so a page never grows without bound.
+const DATA_INLINE_LIMIT = 512 * 1024;
+const DATA_INLINE_START = '<!--rp-data-inline-->';
+const DATA_INLINE_END = '<!--/rp-data-inline-->';
+
+export function inlineSiteData(html, data) {
+  if (typeof html !== 'string' || !data || typeof data !== 'object' || Array.isArray(data)) return html;
+  if (!/<head(?:\s[^>]*)?>/i.test(html)) return html;
+
+  let json;
+  try {
+    json = JSON.stringify(data);
+  } catch (_) {
+    return html;
+  }
+  if (!json || json.length > DATA_INLINE_LIMIT) return html;
+
+  // \u003c / \u003e are valid JSON escapes and read back identically, but
+  // cannot close the surrounding <script> element early.
+  const safeJson = json
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029');
+
+  const block = `${DATA_INLINE_START}
+  <style>html.rp-booting body>*{visibility:hidden!important}</style>
+  <script id="rp-data-inline" type="application/json">${safeJson}</script>
+  <script>
+  (function () {
+    var doc = document.documentElement;
+    var el = document.getElementById('rp-data-inline');
+    var shown = false, asked = false;
+
+    // The markup below is the builder's demo until the page's own script applies
+    // the data, so it stays out of sight until then. visibility (not display)
+    // keeps the layout, so revealing it shifts nothing.
+    function reveal() {
+      if (shown) return;
+      shown = true;
+      doc.classList.remove('rp-booting');
+    }
+    // Reveal after the next frame -- that frame is the first one that can show
+    // the applied data, so there is no gap in between. The timer covers pages
+    // in a background tab, where no frame is produced at all.
+    function revealSoon() {
+      var done = false;
+      function once() { if (done) return; done = true; reveal(); }
+      requestAnimationFrame(function () { requestAnimationFrame(once); });
+      setTimeout(once, 60);
+    }
+    doc.classList.add('rp-booting');
+    window.__rpReveal = revealSoon;
+
+    // Answer the page's own fetch('data.json') from the copy above, then reveal
+    // once the renderer has had that data for a frame.
+    if (el && window.fetch) {
+      var body = el.textContent, orig = window.fetch;
+      window.fetch = function (input, init) {
+        try {
+          var url = typeof input === 'string' ? input : (input && input.url) || '';
+          if (/(^|\\/)data\\.json(?:[?#].*)?$/.test(url)) {
+            var res = new Response(body, { status: 200, headers: { 'Content-Type': 'application/json' } });
+            var json = res.json.bind(res);
+            asked = true;
+            res.json = function () {
+              var p = json();
+              p.then(function () {
+                setTimeout(function () { window.__rpReveal && window.__rpReveal(); }, 0);
+              }, function () {});
+              return p;
+            };
+            return Promise.resolve(res);
+          }
+        } catch (e) {}
+        return orig.apply(this, arguments);
+      };
+    }
+
+    // A page that never asks for data.json (or whose renderer throws) must not
+    // stay hidden. When the page did ask, the reveal above owns the timing, so
+    // this only covers the pages that never do -- plus an unconditional
+    // backstop for anything unforeseen.
+    function fallback() {
+      setTimeout(function () { if (!asked) reveal(); }, 250);
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fallback);
+    else fallback();
+    setTimeout(reveal, 3000);
+  })();
+  <\/script>
+  ${DATA_INLINE_END}`;
+
+  // A page that already carries a copy (re-publish of an inlined page) gets
+  // that copy replaced, never a second one.
+  const out = html.replace(/\s*<!--rp-data-inline-->[\s\S]*?<!--\/rp-data-inline-->/i, '');
+
+  // <head> only -- an unanchored /<head[^>]*>/ would also match <header>.
+  return out.replace(/<head(?:\s[^>]*)?>/i, (match) => `${match}\n  ${block}`);
+}
+
 // The browser can bake everything about a profile except its final URL, so
 // this adds/updates only the URL-dependent tags: base, canonical, og:url, and
 // the sameAs/url fields inside the ProfilePage JSON-LD already in the head.
@@ -119,22 +254,48 @@ export function injectProfileCanonical(html, publicUrl) {
   out = out.replace(
     /<script type="application\/ld\+json" id="rp-google-schema">([\s\S]*?)<\/script>/i,
     (whole, json) => {
+      let obj;
       try {
-        const obj = JSON.parse(json);
-        obj.url = publicUrl;
-        if (obj['@id']) obj['@id'] = publicUrl;
-        if (obj.mainEntity && typeof obj.mainEntity === 'object') obj.mainEntity.url = publicUrl;
-        return `<script type="application/ld+json" id="rp-google-schema">\n${JSON.stringify(obj, null, 2)}\n</script>`;
+        obj = JSON.parse(json);
       } catch (_) {
-        return whole;
+        // A block that cannot be parsed means the page's own markup was broken
+        // (most likely a literal "</script>" in customer text closed the tag
+        // early). Refuse instead of publishing a page with dangling markup.
+        throw Object.assign(
+          new Error('Your page\'s structured data could not be read, so it was not published. Rebuild the page and try again, or message us if it keeps happening.'),
+          { code: 'structured_data_unreadable' }
+        );
       }
+      obj.url = publicUrl;
+      if (obj['@id']) obj['@id'] = publicUrl;
+      if (obj.mainEntity && typeof obj.mainEntity === 'object') obj.mainEntity.url = publicUrl;
+      // \u003c / \u003e are valid JSON escapes and render identically to Google,
+      // but cannot close the surrounding <script> element.
+      const safeJson = JSON.stringify(obj, null, 2)
+        .replace(/</g, '\\u003c')
+        .replace(/>/g, '\\u003e');
+      return `<script type="application/ld+json" id="rp-google-schema">\n${safeJson}\n</script>`;
     }
   );
 
-  const tags = `<base href="${escapeAttr(publicUrl)}/" />\n`
-    + `<link rel="canonical" href="${escapeAttr(publicUrl)}" />\n`
+  // Canonical/og:url are pure metadata -- the end of the head is fine.
+  const metaTags = `<link rel="canonical" href="${escapeAttr(publicUrl)}" />\n`
     + `<meta property="og:url" content="${escapeAttr(publicUrl)}" />`;
-  return out.replace(/<\/head>/i, `${tags}\n</head>`);
+  out = out.replace(/<\/head>/i, `${metaTags}\n</head>`);
+
+  // The <base> tag changes how EVERY relative URL in the document resolves,
+  // so per the HTML spec it must appear before the first element that
+  // references a URL (the stylesheet link sits near the top of the head).
+  // Injected at the end, a browser resolves style.css against /p/<slug>'s
+  // directory root and gets the deployment's HTML fallback instead of the
+  // site's CSS -- the page then renders with no styles at all.
+  const baseTag = `<base href="${escapeAttr(publicUrl)}/" />`;
+  if (/<head[^>]*>/i.test(out)) {
+    out = out.replace(/<head[^>]*>/i, (m) => `${m}\n  ${baseTag}`);
+  } else {
+    out = `${baseTag}\n${out}`;
+  }
+  return out;
 }
 
 async function readBranchFile(gh, ref, path) {
@@ -616,13 +777,27 @@ export async function onRequestPost({ request, env }) {
       files['data.json'] = { content: JSON.stringify(data, null, 2), encoding: 'utf-8' };
     }
 
+    // 5a. Ship that same data inside index.html, so the published page paints
+    //     the owner's content straight away instead of the template's demo
+    //     while data.json is fetched.
+    if (files['index.html'] && typeof files['index.html'].content === 'string') {
+      files['index.html'].content = inlineSiteData(files['index.html'].content, data);
+    }
+
     // 5b. Profiles: now that the branch name exists, the public URL does too.
     //     Add the tags that depend on it (canonical, og:url, JSON-LD url).
     if (isProfile && files['index.html'] && typeof files['index.html'].content === 'string') {
-      files['index.html'].content = injectProfileCanonical(
-        files['index.html'].content,
-        profilePublicUrl(branchName)
-      );
+      try {
+        files['index.html'].content = injectProfileCanonical(
+          files['index.html'].content,
+          profilePublicUrl(branchName)
+        );
+      } catch (err) {
+        if (err && err.code === 'structured_data_unreadable') {
+          return Response.json({ error: err.message, code: err.code }, { status: 400 });
+        }
+        throw err;
+      }
     }
 
     // 6. Get the base branch's latest commit + tree, to branch/build from
@@ -636,7 +811,20 @@ export async function onRequestPost({ request, env }) {
     const baseRef = await baseRefRes.json();
     const baseCommit = await (await gh(`/git/commits/${baseRef.object.sha}`)).json();
 
-    // 7. Create a blob for each file
+    // 7. Create a blob for each file.
+    //    Paths are validated up front so a refused upload writes nothing.
+    for (const filePath of Object.keys(files)) {
+      // Ownership and pairing markers are server-written only -- never let a
+      // caller supply their own.
+      if (filePath === OWNER_FILE || filePath === PAIR_FILE) continue;
+      if (isBlockedUploadPath(filePath)) {
+        return Response.json(
+          { error: `File not allowed: ${filePath}`, code: 'file_not_allowed' },
+          { status: 400 }
+        );
+      }
+    }
+
     const treeItems = [];
     const addBlob = async (filePath, content, encoding) => {
       const blobRes = await gh(`/git/blobs`, {
@@ -650,8 +838,6 @@ export async function onRequestPost({ request, env }) {
     };
 
     for (const [filePath, file] of Object.entries(files)) {
-      // Ownership and pairing markers are server-written only -- never let a
-      // caller supply their own.
       if (filePath === OWNER_FILE || filePath === PAIR_FILE) continue;
       await addBlob(filePath, file.content, file.encoding === 'base64' ? 'base64' : 'utf-8');
     }

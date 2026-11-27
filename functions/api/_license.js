@@ -57,6 +57,8 @@ export const PRODUCT_ID_ENV_BY_TEMPLATE = {
   "profile/style2": "GUMROAD_PRODUCT_ID_PROFILE_EDITORIAL",
   "profile/style3": "GUMROAD_PRODUCT_ID_PROFILE_SPOTLIGHT",
   "profile/style4": "GUMROAD_PRODUCT_ID_PROFILE_QUIET",
+  "profile/style5": "GUMROAD_PRODUCT_ID_PROFILE_HALO",
+  "profile/style6": "GUMROAD_PRODUCT_ID_PROFILE_VISTA",
 };
 
 // Returns { ok: true, email } on success, otherwise
